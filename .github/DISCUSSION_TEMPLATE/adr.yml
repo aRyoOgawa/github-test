@@ -24,14 +24,10 @@ body:
   attributes:
     label: 決定
     description: アーキテクチャの方向性、選択した内容・位置付けを明確に記述すること。
-  validations:
-    required: true
 - type: textarea
   attributes:
     label: コンプライアンス
     description: アーキテクチャ決定をどのように評価・順守するべきかという観点でどのように統制すべきか記述する。
-  validations:
-    required: true
 - type: textarea
   attributes:
     label: 備考
