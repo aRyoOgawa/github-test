@@ -1,3 +1,4 @@
+labels: [ADR/提案]
 body:
 - type: dropdown
   attributes:
