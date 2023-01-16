@@ -18,7 +18,7 @@ body:
     label: Body
     description: Start your discussion!
     value: |
-      "# タイトル"
+      `タイトル`
   validations:
     required: true
     
