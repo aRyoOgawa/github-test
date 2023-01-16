@@ -1,5 +1,3 @@
-title: "タイトル"
-labels: [Accessibility]
 body:
 - type: dropdown
   attributes:
