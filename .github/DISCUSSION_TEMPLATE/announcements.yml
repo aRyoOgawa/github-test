@@ -18,7 +18,8 @@ body:
     label: Body
     description: Start your discussion!
     value: |
-      `タイトル`
+      # タイトル
+      `コードブロック`
   validations:
     required: true
     
