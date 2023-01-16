@@ -19,10 +19,6 @@ body:
     description: Start your discussion!
   validations:
     required: true
-  value: |
-    "# タイトル"
-    テスト
-    "## ホゲ"
-    ホゲホゲ
+  value: "# タイトル"
     
     
