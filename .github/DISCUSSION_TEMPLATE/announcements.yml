@@ -19,7 +19,6 @@ body:
     description: Start your discussion!
     value: |
       "# タイトル"
-      テキスト
   validations:
     required: true
     
