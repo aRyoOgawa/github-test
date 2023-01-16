@@ -3,8 +3,7 @@ labels: [Accessibility]
 body:
 - type: dropdown
   attributes:
-    label: Status
-    description: What would you like to discuss?
+    label: ステータス
     options:
       - "提案"
       - "保留"
@@ -15,12 +14,29 @@ body:
     required: true
 - type: textarea
   attributes:
-    label: Body
-    description: Start your discussion!
-    value: |
-      # タイトル
-      `コードブロック`
+    label: コンテキスト
+    description: 取り組んでいるアーキテクチャ設計の問題や作用している力（技術、政治、社会、コスト、スケジュール）について記述すること。なぜこの問題に今取り組んでいるのかについてはこの欄では問わないことにする。最小限のアプローチに従い、ライフサイクルのさまざまな時点で対処する必要がある問題のみに対処して文書化する。
   validations:
     required: true
+- type: textarea
+  attributes:
+    label: ポジション
+    description: 検討したポジション (実行可能なオプションまたは代替案) を詳細化したいときに記述する。簡潔に記述する場合は、コンテキストに記載すること。
+- type: textarea
+  attributes:
+    label: 決定
+    description: アーキテクチャの方向性、選択した内容・位置付けを明確に記述すること。
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: コンプライアンス
+    description: アーキテクチャ決定をどのように評価・順守するべきかという観点でどのように統制すべきか記述する。
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: 備考
+    description: その他、補足情報。
     
     
