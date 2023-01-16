@@ -17,7 +17,13 @@ body:
   attributes:
     label: Body
     description: Start your discussion!
-    value: "# タイトル"
+    value: |
+      "# タイトル"
+      "## タイトル"
+      "- 項目1"
+      "- 項目2"      
+      "- 項目3"
+      テキスト
   validations:
     required: true
     
