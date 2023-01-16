@@ -3,14 +3,14 @@ labels: [Accessibility]
 body:
 - type: dropdown
   attributes:
-    label: Select Topic Area
+    label: Status
     description: What would you like to discuss?
     options:
-      - "Product Feedback"
-      - "Question"
-      - "Bug"
-      - "Show & Tell"
-      - "General"
+      - "提案"
+      - "保留"
+      - "承認"
+      - "拒否"
+      - "置換"
   validations:
     required: true
 - type: textarea
@@ -19,3 +19,10 @@ body:
     description: Start your discussion!
   validations:
     required: true
+  value: |
+    "# タイトル"
+    テスト
+    "## ホゲ"
+    ホゲホゲ
+    
+    
