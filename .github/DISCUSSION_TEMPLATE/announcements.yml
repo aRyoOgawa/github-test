@@ -17,7 +17,7 @@ body:
   attributes:
     label: Body
     description: Start your discussion!
-    value: # タイトル
+    value: "# タイトル"
   validations:
     required: true
     
