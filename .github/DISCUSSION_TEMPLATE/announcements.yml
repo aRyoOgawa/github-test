@@ -19,10 +19,6 @@ body:
     description: Start your discussion!
     value: |
       "# タイトル"
-      "## タイトル"
-      "- 項目1"
-      "- 項目2"      
-      "- 項目3"
       テキスト
   validations:
     required: true
