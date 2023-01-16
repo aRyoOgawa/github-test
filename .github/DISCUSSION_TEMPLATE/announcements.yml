@@ -1,3 +1,7 @@
+name: ADR
+description: ADR(Architecture Decision Record) template 
+title: ""
+labels: []
 body:
 - type: dropdown
   attributes:
