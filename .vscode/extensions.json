@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "hex-ci.stylelint-plus",
+    "oderwat.indent-rainbow",
+    "visualstudioexptteam.vscodeintellicode",
+    "eamodio.gitlens",
+    "mikestead.dotenv",
+    "wix.vscode-import-cost",
+    "pkief.material-icon-theme",
+    "dbaeumer.vscode-eslint"
+  ]
+}
