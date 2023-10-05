@@ -3,14 +3,15 @@ import { confirm } from "@inquirer/prompts";
 import { select } from "@inquirer/prompts";
 import chalk from "chalk";
 
-const log = (msg) => console.log(chalk.white(msg));
+const outlog = (msg) => console.log(chalk.white(msg));
+const cmdlog = (msg) => console.log(chalk.blue(msg));
 const info = (msg) => console.info(chalk.green(msg));
 const error = (msg) => console.error(chalk.red(msg));
 
 const cmdExec = (cmd) => {
-  log(cmd);
+  cmdlog(cmd);
   const output = execSync(cmd).toString().trim();
-  log(output);
+  outlog(output);
   return output;
 };
 
@@ -40,23 +41,25 @@ try {
 
   if (!releaseOk) process.exit(0);
 
-  info("--- Fetch and Checkout ---");
   cmdExec("git fetch origin release && git checkout -B release");
   cmdExec("git checkout main && git pull origin main");
+  info("[Success] Fetch and Checkout");
 
-  info("--- Merge and Add tag ---");
   cmdExec("git merge --squash release && git commit --no-edit");
-  const tagName = cmdExec(`cd .. && npm version ${releaseType}`);
+  info("[Success] Merge release branch");
 
-  info("--- Push to remote ---");
+  const tagName = cmdExec(`cd .. && npm version ${releaseType}`);
+  info("[Success] Create version tag");
+
   cmdExec(`git push origin main`);
   cmdExec(`git push origin ${tagName}`);
+  info("[Success] Push to remote");
 
-  info("--- Delete release branch ---");
   cmdExec(`git branch -D release`);
   cmdExec(`git push origin --delete release`);
+  info("[Success] Delete release branch");
 
-  info("Release Success!!");
+  info("All Completed");
 } catch (err) {
   error(err);
   error("Release Failed");
