@@ -45,7 +45,7 @@ try {
   cmdExec("git checkout main && git pull origin main");
   info("[Success] Fetch and Checkout");
 
-  cmdExec("git merge --squash release && git commit --no-edit");
+  cmdExec("git merge release");
   info("[Success] Merge release branch");
 
   const tagName = cmdExec(`cd .. && npm version ${releaseType}`);
