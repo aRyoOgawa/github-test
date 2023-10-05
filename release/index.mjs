@@ -55,9 +55,9 @@ try {
   cmdExec(`git push origin ${tagName}`);
   info("[Success] Push to remote");
 
-  cmdExec(`git branch -D release`);
-  cmdExec(`git push origin --delete release`);
-  info("[Success] Delete release branch");
+  // cmdExec(`git branch -D release`);
+  // cmdExec(`git push origin --delete release`);
+  // info("[Success] Delete release branch");
 
   info("All Completed");
 } catch (err) {
