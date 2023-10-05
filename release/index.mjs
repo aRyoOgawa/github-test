@@ -36,7 +36,7 @@ try {
   console.log(output.toString());
 
   console.info("merge and add tag");
-  output = execSync("git merge --squash release && git commit");
+  output = execSync("git merge --squash release && git commit --no-edit");
   console.log(output.toString());
   output = execSync(`cd .. && npm version ${releaseType}`);
   const tagName = output.toString().trim();
