@@ -1,8 +1,8 @@
 {
-  "name": "release-tool",
+  "name": "release-script",
   "version": "1.0.0",
-  "description": "release tool",
-  "main": "index.js",
+  "description": "release script",
+  "main": "index.mjs",
   "scripts": {
     "release": "node index.mjs"
   },

@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { execSync } from "child_process";
 import { confirm } from "@inquirer/prompts";
 import { select } from "@inquirer/prompts";
@@ -16,6 +17,11 @@ const cmdExec = (cmd) => {
 };
 
 try {
+  cmdExec("git checkout main && git pull origin main");
+  const data = fs.readFileSync('../package.json', 'utf8');
+  const packageJson = JSON.parse(data);  
+  info(`current version: ${packageJson.version}`);
+
   const releaseType = await select({
     message: "Select release type",
     choices: [
@@ -42,7 +48,7 @@ try {
   if (!releaseOk) process.exit(0);
 
   cmdExec("git fetch origin release && git checkout -B release");
-  cmdExec("git checkout main && git pull origin main");
+  cmdExec("git checkout main");
   info("[Success] Fetch and Checkout");
 
   cmdExec("git merge release");
