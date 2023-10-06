@@ -1,3 +1,5 @@
+import fs from "fs";
+import open from "open";
 import { execSync } from "child_process";
 import { confirm } from "@inquirer/prompts";
 import { select } from "@inquirer/prompts";
@@ -16,6 +18,11 @@ const cmdExec = (cmd) => {
 };
 
 try {
+  cmdExec("git checkout main && git pull origin main");
+  const data = fs.readFileSync("../package.json", "utf8");
+  const packageJson = JSON.parse(data);
+  info(`current version: ${packageJson.version}`);
+
   const releaseType = await select({
     message: "Select release type",
     choices: [
@@ -42,7 +49,7 @@ try {
   if (!releaseOk) process.exit(0);
 
   cmdExec("git fetch origin release && git checkout -B release");
-  cmdExec("git checkout main && git pull origin main");
+  cmdExec("git checkout main");
   info("[Success] Fetch and Checkout");
 
   cmdExec("git merge release");
@@ -59,7 +66,14 @@ try {
   cmdExec(`git push origin --delete release`);
   info("[Success] Delete release branch");
 
+  cmdExec("git checkout develop");
+
+  info(`updated version: ${tagName}`);
   info("All Completed");
+
+  await open(
+    `https://app.circleci.com/pipelines/github/access-company/Dalmatian?branch=${tagName}`
+  );
 } catch (err) {
   error(err);
   error("Release Failed");
