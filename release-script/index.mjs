@@ -48,10 +48,10 @@ try {
 
   if (!releaseOk) process.exit(0);
 
-  cmdExec("git fetch origin release && git checkout -B release");
-  cmdExec("git checkout main");
-  info("[Success] Fetch and Checkout");
+  cmdExec("git checkout -B release && git pull origin release");
+  info("[Success] Checkout and Pull release branch");
 
+  cmdExec("git checkout main");
   cmdExec("git merge release");
   info("[Success] Merge release branch");
 
