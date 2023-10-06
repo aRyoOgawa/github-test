@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from "fs";
 import { execSync } from "child_process";
 import { confirm } from "@inquirer/prompts";
 import { select } from "@inquirer/prompts";
@@ -18,8 +18,8 @@ const cmdExec = (cmd) => {
 
 try {
   cmdExec("git checkout main && git pull origin main");
-  const data = fs.readFileSync('../package.json', 'utf8');
-  const packageJson = JSON.parse(data);  
+  const data = fs.readFileSync("../package.json", "utf8");
+  const packageJson = JSON.parse(data);
   info(`current version: ${packageJson.version}`);
 
   const releaseType = await select({
@@ -65,6 +65,7 @@ try {
   cmdExec(`git push origin --delete release`);
   info("[Success] Delete release branch");
 
+  info(`updated version: ${tagName}`);
   info("All Completed");
 } catch (err) {
   error(err);
