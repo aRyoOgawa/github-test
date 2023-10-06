@@ -1,4 +1,5 @@
 import fs from "fs";
+import open from "open";
 import { execSync } from "child_process";
 import { confirm } from "@inquirer/prompts";
 import { select } from "@inquirer/prompts";
@@ -67,6 +68,10 @@ try {
 
   info(`updated version: ${tagName}`);
   info("All Completed");
+
+  open(
+    `https://app.circleci.com/pipelines/github/access-company/Dalmatian?branch=${tagName}`
+  );
 } catch (err) {
   error(err);
   error("Release Failed");
