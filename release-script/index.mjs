@@ -69,7 +69,7 @@ try {
   info(`updated version: ${tagName}`);
   info("All Completed");
 
-  open(
+  await open(
     `https://app.circleci.com/pipelines/github/access-company/Dalmatian?branch=${tagName}`
   );
 } catch (err) {
