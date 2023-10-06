@@ -1,2 +1,2 @@
 hugo hoge
-xxx
+xxx xxx
